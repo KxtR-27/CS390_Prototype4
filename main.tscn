@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bbt7rjgtc1qea"]
+
+[ext_resource type="Script" uid="uid://cuu87h126wjlv" path="res://scripts/player.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dryx6erelrjtx" path="res://scripts/wall.gd" id="2_0xm2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(50, 500)
+
+[node name="Main" type="Node2D" unique_id=881639795]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=436020358]
+position = Vector2(563, 318)
+script = ExtResource("1_ig7tw")
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="Player" unique_id=90006717]
+shape = SubResource("CircleShape2D_0xm2m")
+debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
+
+[node name="Wall1" type="StaticBody2D" parent="." unique_id=1925889913]
+position = Vector2(1053, 311)
+script = ExtResource("2_0xm2m")
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="Wall1" unique_id=1443377444]
+shape = SubResource("RectangleShape2D_h2yge")
+debug_color = Color(0.54509807, 0.54509807, 0.54509807, 0.41960785)
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1141168070]
+position = Vector2(87, 298)
+metadata/_edit_group_ = true
+
+[node name="Shape" type="CollisionShape2D" parent="Wall2" unique_id=570629885]
+shape = SubResource("RectangleShape2D_h2yge")
+debug_color = Color(0.54497427, 0.5449743, 0.5449741, 0.41960785)
