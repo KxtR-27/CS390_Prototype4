@@ -14,6 +14,10 @@ config/name="Prototype4"
 run/main_scene="uid://bbt7rjgtc1qea"
 config/features=PackedStringArray("4.6", "Mobile")
 
+[autoload]
+
+GameManager="*uid://ce7yt4dcwoqa3"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1

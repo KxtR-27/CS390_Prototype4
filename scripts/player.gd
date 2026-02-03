@@ -51,3 +51,4 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		if collision.get_collider() is Wall:
 			self.velocity = self.velocity.bounce(collision.get_normal())
+			GameManager.increment_score.emit()

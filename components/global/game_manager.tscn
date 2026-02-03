@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ce7yt4dcwoqa3"]
+
+[ext_resource type="Script" uid="uid://b3juvd1o0ixyv" path="res://scripts/global/game_manager.gd" id="1_ig3ft"]
+
+[node name="GameManager" type="Node" unique_id=1495659321]
+script = ExtResource("1_ig3ft")
+
+[connection signal="increment_score" from="." to="." method="_on_increment_score"]
+[connection signal="reset_score" from="." to="." method="_on_reset_score"]

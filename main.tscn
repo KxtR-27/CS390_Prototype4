@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c0uu2px8c77to" path="res://components/player.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://h2sqwbgul2qm" path="res://components/wall.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://bky3euroemmep" path="res://scripts/score_label.gd" id="3_h2yge"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+font_size = 48
 
 [node name="Main" type="Node2D" unique_id=881639795]
 
@@ -13,3 +17,26 @@ position = Vector2(1053, 311)
 
 [node name="Wall2" parent="." unique_id=567199155 instance=ExtResource("2_h2yge")]
 position = Vector2(95, 311)
+
+[node name="UICanvas" type="CanvasLayer" parent="." unique_id=410893408]
+
+[node name="UIControl" type="Control" parent="UICanvas" unique_id=758719923]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score" type="Label" parent="UICanvas/UIControl" unique_id=1103177175]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_0xm2m")
+script = ExtResource("3_h2yge")
