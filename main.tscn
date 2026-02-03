@@ -31,6 +31,7 @@ debug_color = Color(0.54509807, 0.54509807, 0.54509807, 0.41960785)
 
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=1141168070]
 position = Vector2(87, 298)
+script = ExtResource("2_0xm2m")
 metadata/_edit_group_ = true
 
 [node name="Shape" type="CollisionShape2D" parent="Wall2" unique_id=570629885]
