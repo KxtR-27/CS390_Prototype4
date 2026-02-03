@@ -4,12 +4,22 @@ extends CharacterBody2D
 
 @export var can_move := false
 
+## [b]Subtractive[/b] - vertical strength is substracted from [code]velocity[/code][br]
+## [b]Constant[/b] - [code]velocity.y[/code] is set to vertical strength
+@export_enum("Subtractive", "Constant") var jump_mode := 0
+
+## The horizontal speed at which the player moves.
 @export var horizontal_speed := 300.0
 
+## Velocity applied when jumping. See Jump Mode for how this value is applied.
 @export var vertical_strength := 750.0
 
+## Clamps the upward and downward speed by this value.
+## If Jump Mode is set to constant, and Vertical Strength is less than this value,
+## this value is redundant.
 @export var max_vertical_speed := 1000.0
 
+## Gravity applied to the player
 @export var gravity := 2000.0
 
 
@@ -24,7 +34,12 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if Input.is_action_just_pressed("jump"):
-		self.velocity.y = -vertical_strength
+		# subtractive jump mode
+		if jump_mode == 0:
+			self.velocity.y -= vertical_strength
+		# constant jump mode
+		elif jump_mode == 1:
+			self.velocity.y = -vertical_strength
 	
 	self.velocity.y += delta * gravity
 	
