@@ -1,7 +1,9 @@
 # class_name GameManager - loaded globally, so no class name
 extends Node
 
+
 @warning_ignore_start("unused_signal")
+# emitted by and connected to other scripts
 signal increment_score
 signal reset_score
 @warning_ignore_restore("unused_signal")
