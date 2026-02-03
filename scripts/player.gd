@@ -31,6 +31,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if !can_move:
+		self.velocity = Vector2.ZERO
 		return
 	
 	if Input.is_action_just_pressed("jump"):

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0uu2px8c77to"]
 
 [ext_resource type="Script" uid="uid://cuu87h126wjlv" path="res://scripts/player.gd" id="1_0g4kb"]
+[ext_resource type="Script" uid="uid://ccc0bkp2i1cvt" path="res://scripts/player_screen_notifier.gd" id="2_51jd6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
 radius = 30.0
@@ -12,3 +13,9 @@ metadata/_edit_group_ = true
 [node name="Shape" type="CollisionShape2D" parent="." unique_id=2075321201]
 shape = SubResource("CircleShape2D_0xm2m")
 debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=476734374]
+rect = Rect2(-30, -30, 60, 60)
+script = ExtResource("2_51jd6")
+
+[connection signal="screen_exited" from="ScreenNotifier" to="ScreenNotifier" method="_on_screen_exited"]
