@@ -30,23 +30,26 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("jump") and !can_move:
-		can_move = true
-		self.velocity.x = horizontal_speed
+	if Input.is_action_just_pressed("jump"):
+		if not can_move:
+			can_move = true
+			self.velocity.x = horizontal_speed
+		else:
+			# subtractive jump mode
+			if jump_mode == 0:
+				self.velocity.y -= vertical_strength
+			# constant jump mode
+			elif jump_mode == 1:
+				self.velocity.y = -vertical_strength
+			
+	if Input.is_action_just_pressed("swap_jump_mode"):
+		jump_mode = 1 - jump_mode
 
 
 func _physics_process(delta: float) -> void:
 	if !can_move:
 		self.velocity = Vector2.ZERO
 		return
-	
-	if Input.is_action_just_pressed("jump"):
-		# subtractive jump mode
-		if jump_mode == 0:
-			self.velocity.y -= vertical_strength
-		# constant jump mode
-		elif jump_mode == 1:
-			self.velocity.y = -vertical_strength
 	
 	self.velocity.y += delta * gravity
 	self.velocity.y = clamp(self.velocity.y, -max_vertical_speed, max_vertical_speed)
@@ -58,10 +61,10 @@ func _physics_process(delta: float) -> void:
 		
 		if collider is Wall: 
 			var wall := collider as Wall
-			_bounce(collision)
 			wall.put_spike(collision.get_position())
+			_bounce(collision)
 		# elif collider is Spike:
-			# spike is an Area2D so its statement here has been moved
+			# spike is an Area2D that handles that itself
 
 
 func _bounce(collision: KinematicCollision2D) -> void:
