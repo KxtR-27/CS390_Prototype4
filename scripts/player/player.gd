@@ -22,6 +22,8 @@ extends CharacterBody2D
 ## Gravity applied to the player
 @export var gravity := 2000.0
 
+var is_invincible := false
+
 
 func _ready() -> void:
 	GameManager.reset.connect(_reset)
