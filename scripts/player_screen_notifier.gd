@@ -5,6 +5,4 @@ extends VisibleOnScreenNotifier2D
 
 
 func _on_screen_exited() -> void:
-	player.can_move = false
-	player.position = get_viewport_rect().size / 2
-	GameManager.reset_score.emit()
+	GameManager.reset.emit()

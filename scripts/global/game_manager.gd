@@ -5,7 +5,7 @@ extends Node
 @warning_ignore_start("unused_signal")
 # emitted by and connected to other scripts
 signal increment_score
-signal reset_score
+signal reset
 @warning_ignore_restore("unused_signal")
 
 
@@ -16,5 +16,5 @@ func _on_increment_score() -> void:
 	score += 1
 
 
-func _on_reset_score() -> void:
+func _on_reset() -> void:
 	score = 0

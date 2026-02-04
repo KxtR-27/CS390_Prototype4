@@ -6,4 +6,4 @@
 script = ExtResource("1_ig3ft")
 
 [connection signal="increment_score" from="." to="." method="_on_increment_score"]
-[connection signal="reset_score" from="." to="." method="_on_reset_score"]
+[connection signal="reset" from="." to="." method="_on_reset"]

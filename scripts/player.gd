@@ -23,6 +23,10 @@ extends CharacterBody2D
 @export var gravity := 2000.0
 
 
+func _ready() -> void:
+	GameManager.reset.connect(_reset)
+
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and !can_move:
 		can_move = true
@@ -43,12 +47,26 @@ func _physics_process(delta: float) -> void:
 			self.velocity.y = -vertical_strength
 	
 	self.velocity.y += delta * gravity
-	
 	self.velocity.y = clamp(self.velocity.y, -max_vertical_speed, max_vertical_speed)
 	
 	var collision := move_and_collide(self.velocity * delta)
 	
 	if collision:
-		if collision.get_collider() is Wall:
-			self.velocity = self.velocity.bounce(collision.get_normal())
-			GameManager.increment_score.emit()
+		var collider := collision.get_collider()
+		
+		if collider is Wall: 
+			var wall := collider as Wall
+			_bounce(collision)
+			wall.put_spike(collision.get_position())
+		# elif collider is Spike:
+			# spike is an Area2D so its statement here has been moved
+
+
+func _bounce(collision: KinematicCollision2D) -> void:
+	self.velocity = self.velocity.bounce(collision.get_normal())
+	GameManager.increment_score.emit()
+
+
+func _reset() -> void:
+	self.can_move = false
+	self.position = get_viewport_rect().size / 2
