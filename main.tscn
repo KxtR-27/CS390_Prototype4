@@ -2,22 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://c0uu2px8c77to" path="res://components/player.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://h2sqwbgul2qm" path="res://components/wall.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://kp16226x88vr" path="res://components/game_gui.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://caldomyxtkp87" path="res://components/score_label.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=881639795]
 
 [node name="Player" parent="." unique_id=1461358822 instance=ExtResource("1_0xm2m")]
-position = Vector2(550, 318)
+position = Vector2(576, 324)
 
 [node name="Wall1" parent="." unique_id=1807413694 instance=ExtResource("2_h2yge")]
-position = Vector2(1053, 311)
+position = Vector2(1052, 324)
 spikes_point = 0
 
 [node name="Wall2" parent="." unique_id=567199155 instance=ExtResource("2_h2yge")]
-position = Vector2(95, 311)
+position = Vector2(100, 324)
 
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=410893408]
 
-[node name="GameGui" parent="Canvas" unique_id=1959758050 instance=ExtResource("3_h2yge")]
+[node name="Control" type="Control" parent="Canvas" unique_id=1879514220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[editable path="Canvas/GameGui"]
+[node name="ScoreLabel" parent="Canvas/Control" unique_id=1102451427 instance=ExtResource("3_h2yge")]
+layout_mode = 0
+anchors_preset = 0
+horizontal_alignment = 1
+vertical_alignment = 1
