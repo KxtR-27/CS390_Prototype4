@@ -7,7 +7,7 @@
 [node name="Main" type="Node2D" unique_id=881639795]
 
 [node name="Player" parent="." unique_id=1461358822 instance=ExtResource("1_0xm2m")]
-position = Vector2(563, 318)
+position = Vector2(550, 318)
 
 [node name="Wall1" parent="." unique_id=1807413694 instance=ExtResource("2_h2yge")]
 position = Vector2(1053, 311)
@@ -18,3 +18,5 @@ position = Vector2(95, 311)
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=410893408]
 
 [node name="GameGui" parent="Canvas" unique_id=1959758050 instance=ExtResource("3_h2yge")]
+
+[editable path="Canvas/GameGui"]

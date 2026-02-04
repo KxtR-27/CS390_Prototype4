@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://drtjgici7d8b5"]
+
+[ext_resource type="Script" uid="uid://clal36qhu4j8" path="res://components/spike.gd" id="1_rlul2"]
+
+[node name="Spike" type="StaticBody2D" unique_id=1645725044]
+script = ExtResource("1_rlul2")
+
+[node name="Shape" type="CollisionPolygon2D" parent="." unique_id=1747470581]
+polygon = PackedVector2Array(-10, -10, 10, 0, -10, 10)
