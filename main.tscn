@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0uu2px8c77to" path="res://components/player.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://h2sqwbgul2qm" path="res://components/wall.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://caldomyxtkp87" path="res://components/score_box.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://csafchwvfhkge" path="res://scripts/jump_mode_label.gd" id="4_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=881639795]
 
@@ -28,3 +29,19 @@ grow_vertical = 2
 
 [node name="ScoreBox" parent="Canvas/Control" unique_id=1571901174 instance=ExtResource("3_h2yge")]
 layout_mode = 1
+
+[node name="JumpModeLabel" type="Label" parent="Canvas/Control" unique_id=211733165 node_paths=PackedStringArray("player")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Jump Mode:"
+script = ExtResource("4_1bvp3")
+player = NodePath("../../../Player")
