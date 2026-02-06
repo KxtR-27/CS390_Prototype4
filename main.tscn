@@ -25,11 +25,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="ScoreBox" parent="Canvas/Control" unique_id=1571901174 instance=ExtResource("3_h2yge")]
 layout_mode = 1
 
-[node name="JumpModeLabel" type="Label" parent="Canvas/Control" unique_id=211733165]
+[node name="JumpModeLabel" type="Label" parent="Canvas/Control" unique_id=211733165 node_paths=PackedStringArray("player")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -41,5 +42,6 @@ offset_top = -23.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Jump Mode:"
+text = "Jump Mode"
 script = ExtResource("4_1bvp3")
+player = NodePath("../../../Player")
