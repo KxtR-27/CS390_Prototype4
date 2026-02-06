@@ -38,12 +38,17 @@ func _process(_delta: float) -> void:
 			# subtractive jump mode
 			if jump_mode == 0:
 				self.velocity.y -= vertical_strength
+				SoundManager.JumpSound.pitch_scale = 1.0
+				SoundManager.JumpSound.play()
 			# constant jump mode
 			elif jump_mode == 1:
 				self.velocity.y = -vertical_strength
+				SoundManager.JumpSound.pitch_scale = 2.0
+				SoundManager.JumpSound.play()
 			
-	if Input.is_action_just_pressed("swap_jump_mode"):
+	if Input.is_action_just_pressed("switch_jump_mode"):
 		jump_mode = 1 - jump_mode
+		SoundManager.SwitchJumpModeSound.play()
 
 
 func _physics_process(delta: float) -> void:
@@ -63,6 +68,7 @@ func _physics_process(delta: float) -> void:
 			var wall := collider as Wall
 			wall.put_spike(collision.get_position())
 			_bounce(collision)
+			SoundManager.BounceSound.play()
 		# elif collider is Spike:
 			# spike is an Area2D that handles that itself
 

@@ -5,4 +5,5 @@ extends VisibleOnScreenNotifier2D
 
 
 func _on_screen_exited() -> void:
+	SoundManager.LeaveScreenSound.play()
 	GameManager.reset.emit()

@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player and not (body as Player).is_invincible:
+		SoundManager.HitSpikeSound.play()
 		GameManager.reset.emit()
 
 

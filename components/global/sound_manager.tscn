@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dwpiqy8onwb33"]
+
+[ext_resource type="Script" uid="uid://dtgrkxuqg42bn" path="res://scripts/global/sound_manager.gd" id="1_3ck36"]
+[ext_resource type="AudioStream" uid="uid://c64uqrrwumwmu" path="res://assets/bounce.wav" id="2_cj4fp"]
+[ext_resource type="AudioStream" uid="uid://dld42q4v6spif" path="res://assets/hit_spike.wav" id="3_dwasf"]
+[ext_resource type="AudioStream" uid="uid://dfihk0nnwkpui" path="res://assets/jump.wav" id="4_dwasf"]
+[ext_resource type="AudioStream" uid="uid://2pdvem7vcvbb" path="res://assets/leave_screen.wav" id="4_qpt0s"]
+[ext_resource type="AudioStream" uid="uid://c05vxpvpxve1x" path="res://assets/switch_jump_mode.wav" id="6_qpt0s"]
+
+[node name="SoundManager" type="Node" unique_id=496767861]
+script = ExtResource("1_3ck36")
+
+[node name="Bounce" type="AudioStreamPlayer" parent="." unique_id=854125954]
+stream = ExtResource("2_cj4fp")
+
+[node name="HitSpike" type="AudioStreamPlayer" parent="." unique_id=1637058485]
+stream = ExtResource("3_dwasf")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=387599800]
+stream = ExtResource("4_dwasf")
+volume_db = -5.0
+
+[node name="LeaveScreen" type="AudioStreamPlayer" parent="." unique_id=728915827]
+stream = ExtResource("4_qpt0s")
+
+[node name="SwitchJumpMode" type="AudioStreamPlayer" parent="." unique_id=1080838317]
+stream = ExtResource("6_qpt0s")
