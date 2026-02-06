@@ -5,12 +5,16 @@ extends Label
 
 
 func _ready() -> void:
-	_update_text()
+	if not player:
+		player = get_node("/root/Main/Player")
+	if player:
+		_update_text()
 
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("switch_jump_mode"):
-		_update_text()
+		if player:
+			_update_text()
 
 
 func _update_text() -> void:
