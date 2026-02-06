@@ -56,6 +56,11 @@ func _physics_process(delta: float) -> void:
 		self.velocity = Vector2.ZERO
 		return
 	
+	if self.velocity.x < 0:
+		self.velocity.x = -horizontal_speed
+	elif self.velocity.x > 0:
+		self.velocity.x = horizontal_speed
+	
 	self.velocity.y += delta * gravity
 	self.velocity.y = clamp(self.velocity.y, -max_vertical_speed, max_vertical_speed)
 	
