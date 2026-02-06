@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		
 		if collider is Wall: 
 			var wall := collider as Wall
-			wall.put_spike(collision.get_position())
+			wall.put_spike(collision)
 			_bounce(collision)
 			SoundManager.BounceSound.play()
 		# elif collider is Spike:

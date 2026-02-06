@@ -12,7 +12,6 @@ position = Vector2(576, 324)
 
 [node name="Wall1" parent="." unique_id=1807413694 instance=ExtResource("2_h2yge")]
 position = Vector2(1052, 324)
-spikes_point = 0
 
 [node name="Wall2" parent="." unique_id=567199155 instance=ExtResource("2_h2yge")]
 position = Vector2(100, 324)
