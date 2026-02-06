@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c0uu2px8c77to" path="res://components/player.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://h2sqwbgul2qm" path="res://components/wall.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://caldomyxtkp87" path="res://components/score_label.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://caldomyxtkp87" path="res://components/score_box.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=881639795]
 
@@ -26,7 +26,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScoreLabel" parent="Canvas/Control" unique_id=1102451427 instance=ExtResource("3_h2yge")]
+[node name="ScoreBox" parent="Canvas/Control" unique_id=1571901174 instance=ExtResource("3_h2yge")]
 layout_mode = 1
-horizontal_alignment = 1
-vertical_alignment = 1

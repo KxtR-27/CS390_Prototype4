@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://caldomyxtkp87"]
+
+[ext_resource type="Script" uid="uid://bky3euroemmep" path="res://scripts/score_label.gd" id="1_4bmbs"]
+[ext_resource type="Script" uid="uid://do8tqlf6j5tdu" path="res://scripts/highscore_label.gd" id="2_42fi5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r557p"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_42fi5"]
+font_size = 20
+
+[node name="ScoreBox" type="VBoxContainer" unique_id=1571901174]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_right = 30.5
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1411901791]
+layout_mode = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_r557p")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_4bmbs")
+
+[node name="HighscoreLabel" type="Label" parent="." unique_id=171797467]
+layout_mode = 2
+text = "Highscore: 0"
+label_settings = SubResource("LabelSettings_42fi5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_42fi5")
